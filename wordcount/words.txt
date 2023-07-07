@@ -1,0 +1,1 @@
+Lets read the contents of this file and print the word count
