@@ -11,3 +11,9 @@ func signup(w http.ResponseWriter, r *http.Request) {
 
 	ts.ExecuteTemplate(w, "layout", nil)
 }
+
+func login(w http.ResponseWriter, r *http.Request) {
+	files := []string{"./templates/layout.html", "./templates/public.navbar.html", "./templates/login.html"}
+	ts := template.Must(template.ParseFiles(files...))
+	ts.ExecuteTemplate(w, "layout", nil)
+}

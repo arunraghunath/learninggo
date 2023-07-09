@@ -12,6 +12,8 @@ func main() {
 	mux.Handle("/static/", http.StripPrefix("/static/", files))
 
 	mux.HandleFunc("/signup", signup)
+	mux.HandleFunc("/login", login)
+	mux.HandleFunc("/", index)
 
 	http.ListenAndServe(":2020", mux)
 
