@@ -1,4 +1,4 @@
-module github.com/arunraghunath/koanf/parsers/yaml
+module github.com/arunraghunath/learninggo/koanf/parsers/yaml
 
 go 1.21.0
 
