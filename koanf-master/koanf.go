@@ -2,8 +2,6 @@ package koanf
 
 import (
 	"fmt"
-	"log"
-	"os"
 )
 
 type Koanf struct {
@@ -26,13 +24,19 @@ func NewWithConf(conf Conf) *Koanf {
 	}
 }
 
-func (k *Koanf) Load(fp *File, pa *JSON) {
-	b, err := fp.ReadBytes()
+func (k *Koanf) Load(p Provider, pa Parser) error {
+	if p == nil {
+		fmt.Errorf("Load received nil provider")
+	}
+	b, err := p.ReadBytes()
 	if err != nil {
-		log.Fatal("Error reading file", err)
-		os.Exit(1)
+		return err
 	}
 	conf, err := pa.Unmarshal(b)
-	fmt.Println(conf)
+	if err != nil {
+		return err
+	}
 
+	fmt.Println(conf)
+	return nil
 }
