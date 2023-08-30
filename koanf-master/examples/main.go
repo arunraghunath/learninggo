@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/arunraghunath/koanf"
-	"github.com/arunraghunath/koanf/parsers/json"
 	"github.com/arunraghunath/koanf/providers/file"
+	"github.com/arunraghunath/learninggo/koanf/parsers/json"
 )
 
 func main() {
